@@ -1,6 +1,6 @@
 --- a/libatalk/adouble/ad_open.c
 +++ b/libatalk/adouble/ad_open.c
-@@ -1284,7 +1284,10 @@
+@@ -1284,7 +1284,10 @@ static int ad_open_hf_ea(const char *pat
          /* It doesnt exist, EPERM or another error */
          if (!(errno == ENOATTR || errno == ENOENT)) {
              LOG(log_error, logtype_ad, "ad_open_hf_ea: unexpected: %s", strerror(errno));
