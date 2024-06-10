@@ -8,15 +8,13 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=netatalk
-PKG_VERSION:=3.1.18
+PKG_VERSION:=3.2.0
 PKG_RELEASE:=1
 
-PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
+#PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
+PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.xz
 PKG_SOURCE_URL:=@SF/netatalk
-PKG_HASH:=86d209dc7776a4ba17845164d2e376a469cee376a27b18ae31898e3f4ba41655
-
-PKG_LICENSE:=GPL-2.0-or-later
-PKG_LICENSE_FILES:=COPYING
+PKG_HASH:=0c2b4b47450bc7ac95a268d1033471f572a3e06b64131fcef9b66e73663b6d08
 
 PKG_BUILD_PARALLEL:=1
 PKG_INSTALL:=1
@@ -35,14 +33,13 @@ define Package/netatalk
   DEPENDS:=+libattr +libdb47 +libgcrypt +libopenssl +libevent2
   TITLE:=netatalk
   URL:=http://netatalk.sourceforge.net
-  MAINTAINER:=Antonio Pastor <3aipdck5@duck.com>
+  MAINTAINER:=Alexandru Ardelean <ardeleanalex@gmail.com>
 endef
 
 define Package/netatalk/decription
   Netatalk is a freely-available Open Source AFP fileserver.
   It also provides a kernel level implementation of the AppleTalk
-  Protocol Suite. It supports TimeMachine functionality for
-  old MacOS versions that cannot use SMB shares for backups.
+  Protocol Suite.
 endef
 
 TARGET_CFLAGS += -std=gnu99
